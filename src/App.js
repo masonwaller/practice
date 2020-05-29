@@ -1,24 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react"
 
 
-function App(props) {
+
+export default function App(props) {
   return (
     <div className="App">
-      <Map
-        google={props.google}
-        zoom={9}
-        center={{
-          lat: "50",
-          lng: "50"
-        }}>
-      </Map>
+      <img src="./TI83plus(crop).png" alt="graph" width="200px"/>
     </div>
   );
 }
 
-export default GoogleApiWrapper({
-  apiKey: process.env.REACT_APP_MAPS_API_KEY
-})(App);
+
