@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-
-
+import Pad from './pad.js'
 
 export default function App(props) {
   return (
     <div className="App">
-      <img src="./TI83plus(crop).png" alt="graph" width="200px"/>
+      <Pad/>
     </div>
   );
 }
