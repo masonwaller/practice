@@ -7,7 +7,7 @@ export default function Graph(props) {
         setData({labels: ['monday', 'turesday', 'wednesday'],
             datasets: [{label: 'level of thicccness',
                 data: [64, 57, 26],
-                backgroundColor: [ 'rgba(74, 57, 24, 78)'],
+                backgroundColor: [ 'rgba(74, 9, 75, 35)'],
                 borderWidth: 4
             }]
         })
