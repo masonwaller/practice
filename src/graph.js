@@ -14,7 +14,7 @@ export default function Graph(props) {
     }
     React.useEffect(() => {
         chart()
-    }, [])
+    }, [props.values])
 
     return (
       <div>
