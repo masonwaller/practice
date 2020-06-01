@@ -7,14 +7,14 @@ export default function Pad(props) {
   return (
     <div className='pad'>
       <div><Button num={1}/>
-      <Button num={4}/>
-      <Button num={7}/></div><div>
-      <Button num={2}/>
-      <Button num={5}/>
-      <Button num={8}/></div><div>
-      <Button num={3}/>
-      <Button num={6}/>
-      <Button num={9}/></div>
+      <Button num={4} changeGraph={props.changeGraph}/>
+      <Button num={7} changeGraph={props.changeGraph}/></div><div>
+      <Button num={2} changeGraph={props.changeGraph}/>
+      <Button num={5} changeGraph={props.changeGraph}/>
+      <Button num={8} changeGraph={props.changeGraph}/></div><div>
+      <Button num={3} changeGraph={props.changeGraph}/>
+      <Button num={6} changeGraph={props.changeGraph}/>
+      <Button num={9} changeGraph={props.changeGraph}/></div>
     </div>
   );
 }
