@@ -8,9 +8,7 @@ export default function App(props) {
 
   const changeGraph = (e) => {
     const input = {input: e.target.value}
-    console.log(input)
     setValues([parseFloat(input.input)])
-    console.log(values)
   }
   return (
     <div className="App">
