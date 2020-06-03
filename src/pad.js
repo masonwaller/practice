@@ -15,11 +15,12 @@ export default function Pad(props) {
       <Button num={3} changeGraph={props.changeGraph}/>
       <Button num={6} changeGraph={props.changeGraph}/>
       <Button num={9} changeGraph={props.changeGraph}/></div><div>
-      <Button num={'x'} changeGraph={props.changeSym}/>
-      <Button num={'*'} changeGraph={props.changeSym}/>
-      <Button num={'/'} changeGraph={props.changeSym}/></div><div>
-      <Button num={'+'} changeGraph={props.changeSym}/>
-      <Button num={'-'} changeGraph={props.changeSym}/>
+      <Button num={'x'} changeGraph={props.changeGraph}/>
+      <Button num={'*'} changeGraph={props.changeGraph}/>
+      <Button num={'/'} changeGraph={props.changeGraph}/></div><div>
+      <Button num={'+'} changeGraph={props.changeGraph}/>
+      <Button num={'-'} changeGraph={props.changeGraph}/>
+      <Button num={'c'} changeGraph={props.changeGraph}/>
       </div>
     </div>
   );
