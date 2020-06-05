@@ -7,10 +7,16 @@ import Line from './line.js'
 export default function App(props) {
   const [values, setValues] = useState([0])
   const [sent, setSent] = useState('')
+  const [x, setX] = useState([0,1,2])
 
   const changeGraph = (e) => {
     let val = e.target.value
-    setSent(`${val}`)
+    if(val === 'c'){
+      console.log('c')
+      setSent('')
+      setValues([0])
+    }
+    setSent(`${sent+val}`)
     setValues([val])
     
   }
