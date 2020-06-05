@@ -5,20 +5,34 @@ import Graph from './graph.js'
 import Line from './line.js'
 
 export default function App(props) {
+  const [x, setX] = useState([0,1,2])
   const [values, setValues] = useState([0])
   const [sent, setSent] = useState('')
-  const [x, setX] = useState([0,1,2])
 
   const changeGraph = (e) => {
     let val = e.target.value
     if(val === 'c'){
-      console.log('c')
       setSent('')
       setValues([0])
+    } else {
+      let con = `${sent+val}`
+      setSent(con)
+      if(con.includes('x')){
+        console.log('yes')
+      } else {
+        if(con.includes('/')){
+          division(con)
+        }
+      }
     }
-    setSent(`${sent+val}`)
-    setValues([val])
-    
+  }
+  const division = (con) => {
+    let arr = con.split('/')
+    if(arr[1] === ''){
+      setValues([parseInt(arr[0])])
+    } else {
+      setValues([parseInt(arr[0]/arr[1])])
+    }
   }
   return (
     <div className="App">
