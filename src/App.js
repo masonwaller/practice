@@ -22,6 +22,12 @@ export default function App(props) {
       } else {
         if(con.includes('/')){
           division(con)
+        } else if (con.includes('*')){
+          multiply(con)
+        } else if (con.includes('+')){
+          add(con)
+        } else if (con.includes('-')){
+          sub(con)
         }
       }
     }
@@ -32,6 +38,30 @@ export default function App(props) {
       setValues([parseInt(arr[0])])
     } else {
       setValues([parseInt(arr[0]/arr[1])])
+    }
+  }
+  const multiply = (con) => {
+    let arr = con.split('*')
+    if(arr[1] === ''){
+      setValues([parseInt(arr[0])])
+    } else {
+      setValues([parseInt(arr[0]*arr[1])])
+    }
+  }
+  const add = (con) => {
+    let arr = con.split('+')
+    if(arr[1] === ''){
+      setValues([parseInt(arr[0])])
+    } else {
+      setValues([parseInt(arr[0]+arr[1])])
+    }
+  }
+  const sub = (con) => {
+    let arr = con.split('-')
+    if(arr[1] === ''){
+      setValues([parseInt(arr[0])])
+    } else {
+      setValues([parseInt(arr[0]-arr[1])])
     }
   }
   return (

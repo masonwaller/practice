@@ -6,7 +6,7 @@ import Button from './button.js'
 export default function Pad(props) {
   return (
     <div className='pad'>
-      <div><Button num={1}/>
+      <div><Button num={1} changeGraph={props.changeGraph}/>
       <Button num={4} changeGraph={props.changeGraph}/>
       <Button num={7} changeGraph={props.changeGraph}/></div><div>
       <Button num={2} changeGraph={props.changeGraph}/>
