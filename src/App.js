@@ -17,9 +17,6 @@ export default function App(props) {
     } else {
       let con = `${sent+val}`
       setSent(con)
-      if(con.includes('x')){
-        console.log('yes')
-      } else {
         if(con.includes('/')){
           division(con)
         } else if (con.includes('*')){
@@ -28,40 +25,49 @@ export default function App(props) {
           add(con)
         } else if (con.includes('-')){
           sub(con)
+        } else {
+          setValues([parseFloat(con)])
         }
       }
-    }
   }
   const division = (con) => {
     let arr = con.split('/')
     if(arr[1] === ''){
-      setValues([parseInt(arr[0])])
+      setValues([parseFloat(arr[0])])
+    } else if(arr.includes('x')){
+      setValues([x[0]/arr[1],x[1]/arr[1],x[2]/arr[1]])
     } else {
-      setValues([parseInt(arr[0]/arr[1])])
+      setValues([parseFloat(arr[0]/arr[1])])
     }
   }
   const multiply = (con) => {
     let arr = con.split('*')
     if(arr[1] === ''){
-      setValues([parseInt(arr[0])])
+      setValues([parseFloat(arr[0])])
+    } else if(arr.includes('x')){
+      setValues([x[0]*arr[1],x[1]*arr[1],x[2]*arr[1]])
     } else {
-      setValues([parseInt(arr[0]*arr[1])])
+      setValues([parseFloat(arr[0]*arr[1])])
     }
   }
   const add = (con) => {
     let arr = con.split('+')
     if(arr[1] === ''){
-      setValues([parseInt(arr[0])])
+      setValues([parseFloat(arr[0])])
+    } else if(arr.includes('x')){
+      setValues([x[0]+arr[1],x[1]+arr[1],x[2]+arr[1]])
     } else {
-      setValues([parseInt(arr[0]+arr[1])])
+      setValues([parseFloat(arr[0]+arr[1])])
     }
   }
   const sub = (con) => {
     let arr = con.split('-')
     if(arr[1] === ''){
-      setValues([parseInt(arr[0])])
+      setValues([parseFloat(arr[0])])
+    } else if(arr.includes('x')){
+      setValues([x[0]-arr[1],x[1]-arr[1],x[2]-arr[1]])
     } else {
-      setValues([parseInt(arr[0]-arr[1])])
+      setValues([parseFloat(arr[0]-arr[1])])
     }
   }
   return (
