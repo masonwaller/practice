@@ -35,7 +35,11 @@ export default function App(props) {
     if(arr[1] === ''){
       setValues([parseFloat(arr[0])])
     } else if(arr.includes('x')){
-      setValues([x[0]/arr[1],x[1]/arr[1],x[2]/arr[1]])
+      if(arr[0]==='x'){
+        setValues([x[0]/arr[1],x[1]/arr[1],x[2]/arr[1]])
+      } else {
+        setValues([arr[0]/x[0],arr[0]/x[1],arr[0]/x[2]])
+      }
     } else {
       setValues([parseFloat(arr[0]/arr[1])])
     }
@@ -65,7 +69,11 @@ export default function App(props) {
     if(arr[1] === ''){
       setValues([parseFloat(arr[0])])
     } else if(arr.includes('x')){
-      setValues([x[0]-arr[1],x[1]-arr[1],x[2]-arr[1]])
+      if(arr[0]==='x'){
+        setValues([x[0]-arr[1],x[1]-arr[1],x[2]-arr[1]])
+      } else {
+        setValues([arr[0]-x[0],arr[0]-x[1],arr[0]-x[2]])
+      }
     } else {
       setValues([parseFloat(arr[0]-arr[1])])
     }
