@@ -35,10 +35,41 @@ export default function App(props) {
           add(con)
         } else if (con.includes('-')){
           sub(con)
+        } else if (con.includes('^')){
+          squared(con)
         } else {
           setValues([parseFloat(con)])
         }
       }
+  }
+  const squared = (con) => {
+    let arr = con.split('^')
+    if(arr[1] === ''){
+      setValues([parseFloat(arr[0])])
+    } else if(arr.includes('x')){
+      if(arr[0]==='x'){
+        let a = loop(x[0], parseInt(arr[1]))
+        let b = loop(x[1], parseInt(arr[1]))
+        let c = loop(x[2], parseInt(arr[1]))
+        setValues([a,b,c])
+      } else {
+        let a = loop(parseInt(arr[0]), x[0])
+        let b = loop(parseInt(arr[0]), x[1])
+        let c = loop(parseInt(arr[0]), x[2])
+        setValues([a,b,c])
+      }
+    } else {
+      let a = parseInt(arr[0])
+      let b = parseInt(arr[1])
+      let result;
+      if(b === 0){ result = 1} 
+      else if(b === 1){ result = a} else {
+      for(let i=2; i<=b; i++){
+        if(result){result=result*a}
+        else{result=a*a}
+      }}
+      setValues([result])
+    }
   }
   const division = (con) => {
     let arr = con.split('/')
@@ -96,6 +127,17 @@ export default function App(props) {
       setValues([parseFloat(arr[0]-arr[1])])
     }
   }
+  const loop = (ex, exp) => {
+    let result;
+    if(exp === 0){return 1}
+    else if(exp === 1){return ex} else {
+    for(let i=2; i<=exp; i++){
+      if(result){result=result*ex}
+      else{result=ex*ex}
+    }}
+    return result
+  }
+
   return (
     <div className="App">
       <Pad changeGraph={changeGraph}/>
