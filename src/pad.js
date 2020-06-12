@@ -22,6 +22,7 @@ export default function Pad(props) {
       <Button num={'+'} changeGraph={props.changeGraph}/>
       <Button num={'-'} changeGraph={props.changeGraph}/></div><div>
       <Button num={'^'} changeGraph={props.changeGraph}/>
+      <Button num={'√'} changeGraph={props.changeGraph}/>
       <Button num={'c'} changeGraph={props.changeGraph}/>
         </div>
     </div>

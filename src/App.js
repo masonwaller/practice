@@ -37,6 +37,8 @@ export default function App(props) {
           sub(con)
         } else if (con.includes('^')){
           squared(con)
+        } else if (con.includes('√')) {
+          sqrt(con)
         } else {
           setValues([parseFloat(con)])
         }
@@ -125,6 +127,20 @@ export default function App(props) {
       }
     } else {
       setValues([parseFloat(arr[0]-arr[1])])
+    }
+  }
+  const sqrt = (con) => {
+    let arr = con.split('√')
+    if(arr.includes('x')){
+      setValues([Math.sqrt(x[0]),Math.sqrt(x[1]),Math.sqrt(x[2])])
+    } else {
+      if(arr[0] !== '') {
+        let m = Math.sqrt(arr[0])
+        setValues([m])
+      } else {
+        let m = Math.sqrt(arr[1])
+        setValues([m])
+      }
     }
   }
   const loop = (ex, exp) => {
