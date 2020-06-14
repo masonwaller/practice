@@ -7,7 +7,7 @@ export default function Graph(props) {
         setData({labels: [props.x[0], (props.x[1])? props.x[1]:props.x[0], (props.x[2])? props.x[2]:props.x[0]],
             datasets: [{label: 'Graph',
                 data: [props.values[0], (props.values[1])? props.values[1]:props.values[0], (props.values[2])? props.values[2]:props.values[0] ],
-                backgroundColor: [ 'rgba(7, 59, 5, 3)'],
+                backgroundColor: [ 'rgba(7, 5, 5, 3)'],
                 borderWidth: 4
             }]
         })
